@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://vanechingko.github.io/2019/06/19/test/">
+    <link itemprop="mainEntityOfPage" href="https://vanechingko.github.io/2019/06/19/maven使用问题积累/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="VaneChingKo">
@@ -376,7 +376,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/19/test/" class="post-title-link" itemprop="url">maven使用问题积累</a>
+                <a href="/2019/06/19/maven使用问题积累/" class="post-title-link" itemprop="url">maven使用问题积累</a>
               
             
           </h1>
@@ -401,12 +401,24 @@
                 
               
 
-              <time title="Created: 2019-06-19 18:50:04 / Modified: 21:50:13" itemprop="dateCreated datePublished" datetime="2019-06-19T18:50:04+08:00">2019-06-19</time>
+              <time title="Created: 2019-06-19 18:50:04" itemprop="dateCreated datePublished" datetime="2019-06-19T18:50:04+08:00">2019-06-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-20 09:52:03" itemprop="dateModified" datetime="2019-06-20T09:52:03+08:00">2019-06-20</time>
               
             
           </span>
@@ -423,7 +435,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/后端/" itemprop="url" rel="index"><span itemprop="name">后端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具学习/" itemprop="url" rel="index"><span itemprop="name">工具学习</span></a></span>
 
                 
                 
@@ -438,7 +450,7 @@
 
           
           
-            <span id="/2019/06/19/test/" class="leancloud_visitors" data-flag-title="maven使用问题积累">
+            <span id="/2019/06/19/maven使用问题积累/" class="leancloud_visitors" data-flag-title="maven使用问题积累">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -471,7 +483,7 @@
       
         
           <h5 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h5><p>Maven是一个项目管理和综合工具，能让我们很轻松完成项目构建和自动化测试。本篇以问答的形式对近来被问到过的maven的相关问题做下总结，谨做为知识积累，供大家查阅。后续工作过程中如果大家有遇到这方面的其他问题，欢迎一起补充完善~~</p>
-<h5 id="maven的依赖传递"><a href="#maven的依赖传递" class="headerlink" title="maven的依赖传递"></a>maven的依赖传递</h5><p>Q1: 父pom中使用 <dependencymanagement> </dependencymanagement>声明了A、B的依赖，版本设置为1.0。 版本同为1.0，A、B、C三个项目中，B依赖A，C同时依赖A、B，项目C继承父POM，同时在其项目的pom中加入B依赖，version为2.0。B 2.0 也继承了父pom，同时在其项目的pom中有A 2.0的依赖。这种情况下，对项目C执行mvn package，发现项目C的jar lib中包含的A为1.0版本，B为2.0版本。何解？</p>
+<h5 id="maven的依赖传递"><a href="#maven的依赖传递" class="headerlink" title="maven的依赖传递"></a>maven的依赖传递</h5><p>Q1: 父pom中使用<dependencymanagement></dependencymanagement>声明了A、B的依赖，版本设置为1.0。 版本同为1.0，A、B、C三个项目中，B依赖A，C同时依赖A、B，项目C继承父POM，同时在其项目的pom中加入B依赖，version为2.0。B 2.0 也继承了父pom，同时在其项目的pom中有A 2.0的依赖。这种情况下，对项目C执行mvn package，发现项目C的jar lib中包含的A为1.0版本，B为2.0版本。何解？</p>
 <p>A1: 这个问题与maven 的传递性依赖有关，先看官方文档对于<a href="http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Management" target="_blank" rel="noopener">传递性依赖的定义及其规则</a>。<a href="http://ifeve.com/maven-dependency-mechanism/" target="_blank" rel="noopener">中文文档</a>可参考，但具体释义建议以官方文档为准。</p>
 <p>传递性依赖是maven2.0以后出现的新的特性。当你的项目依赖库A，而库A又依赖库B和库C时，传递性依赖使得你项目添加A依赖时，就能帮你把A依赖的其他库B和C也隐式添加到你的项目中，从而避免去寻找所有依赖。该特性依靠解析远端仓库的依赖库的项目文件得以实现的。传递性依赖没有嵌套深度的限制，但是当出现循环依赖的时候会报错。<br>传递性依赖使得包含的依赖库得以很快增长，因为这个原因，依赖性做了一些限制性规定，来确定选择哪些依赖库。</p>
 <ul>
@@ -511,7 +523,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/06/19/test/#more" rel="contents">
+              <a class="btn" href="/2019/06/19/maven使用问题积累/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
