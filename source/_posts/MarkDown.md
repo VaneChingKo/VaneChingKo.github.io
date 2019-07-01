@@ -1,6 +1,6 @@
 ---
 title: MarkDown
-date: 2019-06-19 18:50:04
+date: 2019-07-01 18:05:04
 categories: 工具学习
 tags: [MarkDown]
 ---
@@ -88,7 +88,7 @@ Alt text：图片的Alt标签，用来描述图片的关键词，可以不写。
 \![avatar]\[base64str]  
 \[base64str]:data:image/png;base64,iVBORw0......
 ##### 最后，base64的图片编码如何得来？
-在线转化地址：http://tool.chinaz.com/tools/imgtobase/
+在线转化地址：http://imgbase64.duoshitong.com/
 
 资料参考链接：  
 https://www.jianshu.com/p/e989689a331d  
